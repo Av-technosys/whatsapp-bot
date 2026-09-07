@@ -1,0 +1,12 @@
+{
+  "extends": "../../packages/typescript-config/base.json",
+  "compilerOptions": {
+    "declaration": false,
+    "declarationMap": false,
+    "outDir": "dist",
+    "rootDir": ".",
+    "sourceMap": true
+  },
+  "include": ["index.ts", "src/**/*.ts", "db/**/*.ts", "drizzle.config.ts"],
+  "exclude": ["dist", "node_modules"]
+}

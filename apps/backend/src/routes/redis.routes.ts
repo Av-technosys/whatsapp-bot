@@ -1,5 +1,8 @@
 import { Router } from "express";
-import { getUserProfile, addRedisEntry } from "../controllers/redis.controller.js";
+import {
+  addRedisEntry,
+  getUserProfile,
+} from "../controllers/redis.controller.js";
 
 const router = Router();
 

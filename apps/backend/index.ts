@@ -7,7 +7,8 @@ async function startServer() {
   try {
     await connectRedis();
   } catch (err) {
-    console.error("Failed to connect to Redis:", err.message);
+    const message = err instanceof Error ? err.message : String(err);
+    console.error("Failed to connect to Redis:", message);
   }
 
   app.listen(port, () => {

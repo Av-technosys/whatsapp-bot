@@ -27,8 +27,8 @@ export default function SalesforceConnectPage() {
           <CardTitle>Salesforce Connect</CardTitle>
         </CardHeader>
         <CardContent>
-          <div>
-            <Label>Salseforce Login URL</Label>
+          <div className=" mb-4">
+            <Label className=" mb-2">Salseforce Login URL</Label>
             <Input
               type="text"
               disabled
@@ -37,15 +37,15 @@ export default function SalesforceConnectPage() {
               }
             />
           </div>
-          <div>
-            <Label>Salesforce API URL</Label>
+          <div className=" mb-4">
+            <Label className=" mb-2">Salesforce API URL</Label>
             <Input
               type="text"
               placeholder="https://your-instance.salesforce.com/services/data/v59.0"
             />
           </div>
           <div>
-            <Label>Platform API Key</Label>
+            <Label className=" mb-2">Platform API Key</Label>
             <div className="flex items-center gap-2">
               <Input
                 type={showApiKey ? "text" : "password"}

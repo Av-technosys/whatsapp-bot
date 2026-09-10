@@ -1,4 +1,8 @@
 import { pgTable, timestamp, uuid, varchar, serial } from "drizzle-orm/pg-core";
+import postgres from "postgres";
+import { drizzle } from "drizzle-orm/postgres-js";
+
+import { databaseUrl } from "../src/config/env.js";
 
 export const tenants = pgTable("tenants", {
   tenantId: serial("tenant_id").primaryKey(),
@@ -63,3 +67,10 @@ export const messages = pgTable("messages", {
   whatsappMessageId: varchar("whatsapp_message_id", { length: 255 }).notNull(),
   status: varchar("status", { length: 50 }).notNull(),
 });
+
+// Supabase's transaction-mode pooler (port 6543) doesn't support prepared
+// statements, so they're disabled here.
+const queryClient = postgres(databaseUrl, { prepare: false });
+
+// Ready-to-use drizzle client — controllers just import `db` from this file.
+export const db = drizzle(queryClient);

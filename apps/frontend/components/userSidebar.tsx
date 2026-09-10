@@ -14,9 +14,8 @@ import {
 import {
   BarChart3Icon,
   LogOutIcon,
-  MessageCircleIcon,
-  PlugIcon,
   SettingsIcon,
+  UsersIcon,
 } from "lucide-react"
 
 const userNavItems = [
@@ -26,14 +25,9 @@ const userNavItems = [
     icon: BarChart3Icon,
   },
   {
-    title: "Whatsapp",
-    href: "/whatsapp",
-    icon: MessageCircleIcon,
-  },
-  {
-    title: "Salseforce Connect",
-    href: "/salesforce-connect",
-    icon: PlugIcon,
+    title: "Tenants",
+    href: "/tenant",
+    icon: UsersIcon,
   },
   {
     title: "Setting",
